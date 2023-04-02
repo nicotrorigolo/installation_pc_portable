@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "L'installation de la configuration est effectué sur Ubuntu 22.04 LTS"
+
 echo "Donner acces a l'utilisateur"
 sudo chmod o+rx /home/$USER
 
