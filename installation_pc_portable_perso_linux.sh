@@ -24,6 +24,9 @@ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > pa
 echo "Installer vagrant"
 sudo apt install -y vagrant
 
+echo "Installer plugin vagrant"
+vagrant plugin install vagrant-reload
+
 echo "Installation de docker"
 sudo apt install -y docker.io
 sudo usermod -aG docker $USER
