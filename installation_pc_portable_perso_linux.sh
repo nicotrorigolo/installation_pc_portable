@@ -4,7 +4,7 @@ echo "Donner acces a l'utilisateur"
 sudo chmod o+rx /home/$USER
 
 echo "Installer les packages d'installations"
-sudo apt install -y wget gpg apt-transport-https git nano curl
+sudo apt install -y wget gpg apt-transport-https git nano curl python3.10-venv
 
 echo "Installer google chrome"
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
