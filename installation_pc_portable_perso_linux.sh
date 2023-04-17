@@ -36,8 +36,10 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
 # sudo apt autoremove
 && sudo apt-get install -y nodejs
 
-
-
+echo "Installation robotframework"
+pip install robotframework \
+&& robotframework-browser
+rfbrowser init
 
 
 
