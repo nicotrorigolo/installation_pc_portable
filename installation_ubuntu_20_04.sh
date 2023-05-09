@@ -30,4 +30,13 @@ echo "Installer nodeJS"
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
 && sudo apt-get install -y nodejs
 
+echo "Installer l'environnement virtuel python"
+mkdir ~/venv \
+&& python3 -m venv ~/venv \
+
+echo "Installer Ansible"
+# Il existe plein de manières d'installer Ansible, toutefois l'installation via python est la plus simple
+source ~/venv/bin/activate
+pip install ansible
+
 echo "Fin des installations"
