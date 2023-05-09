@@ -40,3 +40,4 @@ source ~/venv/bin/activate
 pip install ansible
 
 echo "Fin des installations"
+echo "Redemarrer le PC pour pouvoir initialiser docker"
