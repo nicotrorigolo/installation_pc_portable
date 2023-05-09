@@ -41,6 +41,9 @@ echo "Installer Ansible"
 # Il existe plein de manières d'installer Ansible, toutefois l'installation via python est la plus simple
 source ~/venv/bin/activate
 pip install ansible
+# Pour pouvoir se connecter en ssh avec ansible, il faut installer le packet suivant. La connexion en ssh va fonctionner mais avec l'argument "-k".
+sudo apt install sshpass
+
 
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
