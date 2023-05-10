@@ -4,7 +4,7 @@ echo "L'installation de la configuration est effectué sur Ubuntu 20.04 LTS"
 #echo {mot_de_passe} | sudo -S apt install {paquet}
 
 echo "Installer les packages d'installations"
-sudo apt install -y wget gpg apt-transport-https git nano curl python3.8-venv virtualbox net-tools
+sudo apt install -y wget gpg apt-transport-https git nano curl python3.8-venv virtualbox net-tools tree
 
 echo "Installer google chrome"
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
