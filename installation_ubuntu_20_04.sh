@@ -43,7 +43,10 @@ source ~/venv/bin/activate
 pip install ansible
 # Pour pouvoir se connecter en ssh avec ansible, il faut installer le packet suivant. La connexion en ssh va fonctionner mais avec l'argument "-k".
 sudo apt install sshpass
-
+# Creation du fichier de ansible.cfg #Avec une installation via pip, ansible ne crée pas le fichier ansible.cfg
+sudo mkdir /etc/ansible \
+&& echo host_key_checking = False > ansible.cfg \
+&& sudo mv ansible.cfg /etc/ansible/ansible.cfg
 
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
