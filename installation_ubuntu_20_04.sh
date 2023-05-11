@@ -3,8 +3,13 @@ echo "L'installation de la configuration est effectué sur Ubuntu 20.04 LTS"
 #Commande pour ne pas rentrer le mot de passe sudo
 #echo {mot_de_passe} | sudo -S apt install {paquet}
 
+echo "Mettre a jour python"
+add-apt-repository ppa:deadsnakes/ppa \
+&& sudo add-apt-repository ppa:deadsnakes/ppa \
+&& sudo apt update 
+
 echo "Installer les packages d'installations"
-sudo apt install -y wget gpg apt-transport-https git nano curl python3.8-venv virtualbox net-tools tree
+sudo apt install -y wget gpg apt-transport-https git nano curl python3.11-venv virtualbox net-tools tree
 
 echo "Installer google chrome"
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
