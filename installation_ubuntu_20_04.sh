@@ -40,7 +40,7 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
 
 echo "Installer l'environnement virtuel python"
 mkdir ~/venv \
-&& python3 -m venv ~/venv
+&& python3.11 -m venv ~/venv
 
 echo "Installer Ansible"
 # Il existe plein de manières d'installer Ansible, toutefois l'installation via python est la plus simple
