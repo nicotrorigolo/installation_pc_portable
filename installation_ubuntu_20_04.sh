@@ -40,7 +40,8 @@ mkdir ~/venv \
 echo "Installer Ansible"
 # Il existe plein de manières d'installer Ansible, toutefois l'installation via python est la plus simple
 source ~/venv/bin/activate
-pip install ansible
+pip install ansible \
+&& ansible-lint # linter de ansible, c'est facultatif
 # Pour pouvoir se connecter en ssh avec ansible, il faut installer le packet suivant. La connexion en ssh va fonctionner mais avec l'argument "-k".
 sudo apt install sshpass
 # Creation du fichier de ansible.cfg #Avec une installation via pip, ansible ne crée pas le fichier ansible.cfg
