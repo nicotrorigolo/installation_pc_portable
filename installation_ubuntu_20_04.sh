@@ -5,8 +5,8 @@ echo "L'installation de la configuration est effectué sur Ubuntu 20.04 LTS"
 
 echo "Mettre a jour python"
 sudo add-apt-repository ppa:deadsnakes/ppa \
-&& sudo add-apt-repository ppa:deadsnakes/ppa \
-&& sudo apt update 
+&& sudo apt update \
+&& sudo apt install python3.11
 
 echo "Installer les packages d'installations"
 sudo apt install -y wget gpg apt-transport-https git nano curl python3.11-venv virtualbox net-tools tree
