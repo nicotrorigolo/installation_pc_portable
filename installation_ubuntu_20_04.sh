@@ -54,5 +54,10 @@ sudo mkdir /etc/ansible \
 && echo host_key_checking = False > ansible.cfg \
 && sudo mv ansible.cfg /etc/ansible/ansible.cfg
 
+echo "Installation robotframework"
+pip install robotframework \
+&& robotframework-browser
+rfbrowser init
+
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
