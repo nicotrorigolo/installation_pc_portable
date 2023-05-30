@@ -56,6 +56,7 @@ sudo mkdir /etc/ansible \
 
 echo "Installation robotframework"
 pip install robotframework \
+&& robotframework-debuglibrary \
 && robotframework-browser
 rfbrowser init
 
