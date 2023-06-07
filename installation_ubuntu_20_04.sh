@@ -34,6 +34,9 @@ echo "Installation de docker"
 sudo apt install -y docker.io
 sudo usermod -aG docker $USER
 
+echo "Installation de docker-compose"
+sudo apt install -y docker-compose
+
 echo "Installer nodeJS"
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
 && sudo apt-get install -y nodejs
