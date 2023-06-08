@@ -63,5 +63,12 @@ pip install robotframework \
 && robotframework-browser
 rfbrowser init
 
+echo "Installer glab" #La commande pour l'installation de glab ne peut pas etre effectue par "root".
+sudo apt install -y build-essential \
+&& NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
+&& (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/$USER/.bashrc \
+&& eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" \
+&& brew install glab
+
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
