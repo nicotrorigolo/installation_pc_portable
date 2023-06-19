@@ -71,5 +71,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew install glab
 eval "$(glab completion -s bash)"  # auto-completion de glab
 
+Installation lighthouse-ci
+npm i @lhci/cli
+
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
