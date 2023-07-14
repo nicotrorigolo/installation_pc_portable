@@ -28,7 +28,9 @@ echo "Installer vagrant"
 sudo apt install -y vagrant
 # Suite a une evolution de version de vagrant, il faut declarer les adresses ip que l'on souhaite creer
 sudo mkdir /etc/vbox/ \
-&& sudo echo * 10.0.0.0/20 > /etc/vbox/networks.conf
+&& sudo echo "*" 10.0.0.0/20 > /etc/vbox/networks.conf \
+&& sudo echo "*" 11.0.0.0/20 > /etc/vbox/networks.conf \
+sudo echo "*" 12.0.0.0/20 > /etc/vbox/networks.conf
 
 echo "Installation de docker"
 sudo apt install -y docker.io
