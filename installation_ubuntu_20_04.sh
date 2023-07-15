@@ -73,8 +73,14 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew install glab
 eval "$(glab completion -s bash)"  # auto-completion de glab
 
-Installation lighthouse-ci
+echo "Installation lighthouse-ci"
 npm i @lhci/cli
+
+echo "Installation de playwright (version sans robotframework)"
+pip install playwright
+pip install pytest
+pip install pytest-playwright
+playwright install
 
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
