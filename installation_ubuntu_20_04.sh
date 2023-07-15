@@ -77,10 +77,10 @@ echo "Installation lighthouse-ci"
 npm i @lhci/cli
 
 echo "Installation de playwright (version sans robotframework)"
-pip install playwright
-pip install pytest
-pip install pytest-playwright
-playwright install
+pip install playwright \
+&& pytest \
+&& pytest-playwright \
+&& playwright install
 
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
