@@ -53,11 +53,14 @@ source ~/venv/bin/activate
 pip install ansible \
 && ansible-lint # linter de ansible, c'est facultatif
 # Pour pouvoir se connecter en ssh avec ansible, il faut installer le packet suivant. La connexion en ssh va fonctionner avec l'argument "-k".
-sudo apt install sshpass
+sudo apt -y install sshpass
 # Creation du fichier de ansible.cfg #Avec une installation via pip, ansible ne crée pas le fichier ansible.cfg
 sudo mkdir /etc/ansible \
 && echo host_key_checking = False > ansible.cfg \
 && sudo mv ansible.cfg /etc/ansible/ansible.cfg
+
+echo "Installer Ansible-Docker"
+sudo apt install -y python3-docker
 
 echo "Installation robotframework"
 pip install robotframework \
