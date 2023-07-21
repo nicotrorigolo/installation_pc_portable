@@ -85,11 +85,15 @@ pip install playwright \
 && pytest-playwright \
 && playwright install
 
-Installation de minikube
+echo "Installation de minikube"
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64   && chmod +x minikube \
 && mkdir -p /usr/local/bin/ \
 && install minikube /usr/local/bin/
 
+echo "Configuration de apt pour kubernetes"
+apt-get update && apt-get install -y apt-transport-https curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+sudo add-apt-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 
 
 echo "Fin des installations"
