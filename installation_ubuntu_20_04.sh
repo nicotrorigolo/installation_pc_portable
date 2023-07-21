@@ -85,6 +85,10 @@ pip install playwright \
 && pytest-playwright \
 && playwright install
 
+echo "Desactivation du swap pour kubernetes (il est possible que le swap soit deja desactiver)"
+swapoff -a
+sed -i 's/dev/mapper/vagrant--vg-swap_1/#/dev/mapper/vagrant--vg-swap_1/g' /etc/fstab
+
 echo "Installation de minikube"
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64   && chmod +x minikube \
 && mkdir -p /usr/local/bin/ \
