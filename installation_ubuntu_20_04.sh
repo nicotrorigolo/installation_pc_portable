@@ -85,5 +85,12 @@ pip install playwright \
 && pytest-playwright \
 && playwright install
 
+Installation de minikube
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64   && chmod +x minikube \
+&& mkdir -p /usr/local/bin/ \
+&& install minikube /usr/local/bin/
+
+
+
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
