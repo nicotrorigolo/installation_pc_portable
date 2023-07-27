@@ -85,6 +85,12 @@ pip install playwright \
 && pytest-playwright \
 && playwright install
 
+#######################################################################################################################################
+
+#######################################################################################################################################
+#####################################################   Installation de K8S   #########################################################
+#######################################################################################################################################
+
 echo "Desactivation du swap pour kubernetes (il est possible que le swap soit deja desactiver)"
 swapoff -a
 sed -i 's/dev/mapper/vagrant--vg-swap_1/#/dev/mapper/vagrant--vg-swap_1/g' /etc/fstab
@@ -102,6 +108,26 @@ sudo add-apt-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 echo "Installation de kubernetes"
 sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 systemctl enable kubelet
+
+#######################################################################################################################################
+#####################################################   Installation de K3D   #########################################################
+#######################################################################################################################################
+
+echo "Recuperer le paquet d'installation de k3d"
+curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | TAG=v5.0.0 bash
+
+#######################################################################################################################################
+
+echo "Installation de Helm (Il faut que K8S ou K3D soient deja installe)"
+helm repo add bitnami https://charts.bitnami.com/bitnami
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+
+
+
+
+
 
 
 echo "Fin des installations"
