@@ -118,7 +118,7 @@ curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | TAG=v5.0.
 
 #######################################################################################################################################
 
-echo "Installation de Helm (Il faut que K8S ou K3D soient deja installe)"
+echo "Installation de Helm (Il faut que K8S ou K3D soit deja installe)"
 helm repo add bitnami https://charts.bitnami.com/bitnami
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod 700 get_helm.sh
