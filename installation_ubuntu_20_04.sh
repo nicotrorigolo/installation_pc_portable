@@ -129,6 +129,5 @@ chmod 700 get_helm.sh
 
 
 
-
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
