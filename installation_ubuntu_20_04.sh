@@ -30,7 +30,8 @@ sudo apt install -y vagrant
 sudo mkdir /etc/vbox/ \
 && sudo echo "*" 10.0.0.0/20 > /etc/vbox/networks.conf \
 && sudo echo "*" 11.0.0.0/20 > /etc/vbox/networks.conf \
-sudo echo "*" 12.0.0.0/20 > /etc/vbox/networks.conf
+&& sudo echo "*" 12.0.0.0/20 > /etc/vbox/networks.conf \
+sudo echo "*" 13.0.0.0/20 > /etc/vbox/network.conf
 
 echo "Installation de docker"
 sudo apt install -y docker.io
@@ -51,7 +52,8 @@ echo "Installer Ansible"
 # Il existe plein de manières d'installer Ansible, toutefois l'installation via python est la plus simple
 source ~/venv/bin/activate
 pip install ansible \
-&& ansible-lint # linter de ansible, c'est facultatif
+passlib \ # C'est pour le cryptage. C'est utile quand on manipule des mots de passe
+ansible-lint # linter de ansible, c'est facultatif
 # Pour pouvoir se connecter en ssh avec ansible, il faut installer le packet suivant. La connexion en ssh va fonctionner avec l'argument "-k".
 sudo apt -y install sshpass
 # Creation du fichier de ansible.cfg #Avec une installation via pip, ansible ne crée pas le fichier ansible.cfg
