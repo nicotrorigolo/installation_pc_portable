@@ -142,8 +142,17 @@ sudo apt install -y qemu qemu-kvm libvirt-daemon bridge-utils virt-manager virti
 && sudo systemctl start libvirtd \
 && sudo systemctl enable  libvirtd
 
+echo "Installer le provider pour vm"
+mkdir -p ~/.terraform.d/plugins \
+&& wget -P ~/.terraform.d/plugins/  https://github.com/dmacvicar/terraform-provider-libvirt/archive/refs/tags/v0.7.1.tar.gz \
+&& tar xvf  ~/.terraform.d/plugins/v0.7.1.tar.gz \
+&& mv terraform-provider-libvirt-0.7.1 ~/.terraform.d/plugins/ \
+&& rm -rf ~/.terraform.d/plugins/v0.7.1.tar.gz \
 
-
+echo "Parametrer provider pour vm"
+sudo usermod -aG kvm,libvirt $USER
+sudo echo 'security_driver = [ "none" ]' > /etc/libvirt/qemu.conf 
+sudo systemctl restart libvirtd
 
 
 echo "Fin des installations"
