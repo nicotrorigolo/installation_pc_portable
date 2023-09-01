@@ -126,10 +126,23 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh
 
-Installation de Terraform
+echo "Installation de Terraform"
 wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg \
 && echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list \
 && sudo apt update && sudo apt install terraform
+
+echo "Verifier que kvm est installable sur le pc"
+grep -E -c "vmx|svm" /proc/cpuinfo \
+&& sudo apt install -y cpu-checker \
+&& kvm-ok 
+
+echo "Installation de kvm"
+sudo apt install -y qemu qemu-kvm libvirt-daemon bridge-utils virt-manager virtinst \
+&& lsmod | grep -i kvm \
+&& sudo systemctl start libvirtd \
+&& sudo systemctl enable  libvirtd
+
+
 
 
 
