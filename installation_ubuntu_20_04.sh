@@ -138,6 +138,9 @@ curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share
 && sudo apt-get update \
 && sudo apt-get install helm
 
+echo "Installation plugin Helm pour pousser dans gitlab"
+helm plugin install https://github.com/chartmuseum/helm-push
+
 echo "Installation de Terraform"
 wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg \
 && echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list \
