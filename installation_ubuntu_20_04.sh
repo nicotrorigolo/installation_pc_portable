@@ -163,6 +163,9 @@ sudo usermod -aG kvm,libvirt $USER
 sudo echo 'security_driver = [ "none" ]' > /etc/libvirt/qemu.conf 
 sudo systemctl restart libvirtd
 
+echo "Installation library python libvirt"
+sudo apt install python3.11-dev \ # peut etre aussi : sudo apt install libvirt-dev
+&& pip install libvirt-python
 
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
