@@ -170,5 +170,8 @@ echo "Installation library python libvirt"
 sudo apt install python3.11-dev \ # peut etre aussi : sudo apt install libvirt-dev
 && pip install libvirt-python
 
+echo "Installation jmeter"
+sudo apt install jmeter
+
 echo "Fin des installations"
 echo "Redemarrer le PC pour pouvoir initialiser docker"
